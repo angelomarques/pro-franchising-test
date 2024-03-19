@@ -1,4 +1,4 @@
-import { AuthOptions } from "next-auth";
+import { AuthOptions, getServerSession } from "next-auth";
 
 import { compare } from "bcrypt";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -72,3 +72,5 @@ export const authOptions: AuthOptions = {
     },
   },
 };
+
+export const getAuthSession = () => getServerSession(authOptions);
