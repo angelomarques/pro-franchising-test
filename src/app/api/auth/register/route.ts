@@ -1,14 +1,9 @@
-import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { RegisterUserSchema } from "@/lib/schemas/registerUser";
 import { hash } from "bcrypt";
 import { ZodError } from "zod";
 
 export async function POST(req: Request) {
-  //   const session = await getAuthSession();
-
-  //   if (!session) return new Response("Unauthorized", { status: 401 });
-
   try {
     const body = await req.json();
     const { email, name, password } = RegisterUserSchema.parse(body);
