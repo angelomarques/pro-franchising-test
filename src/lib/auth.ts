@@ -8,6 +8,10 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
+  pages: {
+    signIn: "/sign-in",
+    signOut: "/sign-out",
+  },
   providers: [
     CredentialsProvider({
       name: "Sign in",
@@ -69,6 +73,9 @@ export const authOptions: AuthOptions = {
         };
       }
       return token;
+    },
+    redirect: () => {
+      return "/";
     },
   },
 };

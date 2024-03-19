@@ -1,0 +1,18 @@
+.container {
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-slate-100);
+  color: var(--color-slate-900);
+}
+
+.container:hover:not(:disabled) {
+  background: var(--color-slate-300);
+}
+
+.container:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,28 @@
+.container {
+  display: block;
+}
+
+.container > input {
+  height: 2.5rem;
+  outline-color: var(--color-slate-300);
+  background: none;
+  border: 1px solid var(--color-slate-500);
+  border-radius: 8px;
+  width: 100%;
+  color: var(--color-slate-100);
+  font-size: 1rem;
+  padding: 0rem 0.5rem;
+  box-sizing: border-box;
+  margin-top: 0.75rem;
+}
+
+.container > input::placeholder {
+  color: var(--color-slate-100);
+  opacity: 0.6;
+}
+
+.container > p {
+  font-size: 0.8rem;
+  color: var(--color-red-400);
+  margin: 0.5rem 0rem 0rem;
+}

@@ -5,12 +5,13 @@ import { hash } from "bcrypt";
 import { ZodError } from "zod";
 
 export async function POST(req: Request) {
-  const session = await getAuthSession();
+  //   const session = await getAuthSession();
 
-  if (!session) return new Response("Unauthorized", { status: 401 });
+  //   if (!session) return new Response("Unauthorized", { status: 401 });
 
   try {
-    const { email, name, password } = RegisterUserSchema.parse(req.json());
+    const body = await req.json();
+    const { email, name, password } = RegisterUserSchema.parse(body);
 
     const hashedPassword = await hash(password, 10);
 
@@ -21,6 +22,8 @@ export async function POST(req: Request) {
         password: hashedPassword,
       },
     });
+
+    return new Response("User successfully created!");
   } catch (error) {
     if (error instanceof ZodError) {
       return new Response("Invalid request data passed", { status: 422 });

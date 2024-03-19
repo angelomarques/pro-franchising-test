@@ -1,7 +1,6 @@
 import { z } from "zod";
 
-export const RegisterUserSchema = z.object({
-  name: z.string({ required_error: "Nome é obrigatório" }),
+export const LoginUserSchema = z.object({
   email: z
     .string({ required_error: "Email é obrigatório" })
     .email({ message: "Email inválido" }),
@@ -10,4 +9,4 @@ export const RegisterUserSchema = z.object({
     .min(6, { message: "Senha deve ter um mínimo de 6 caracteres" }),
 });
 
-export type RegisterUserSchemaType = z.infer<typeof RegisterUserSchema>;
+export type LoginUserSchemaType = z.infer<typeof LoginUserSchema>;

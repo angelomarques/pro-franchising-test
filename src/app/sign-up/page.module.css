@@ -1,0 +1,18 @@
+.container {
+  max-width: var(--screen-sm);
+  margin: 5rem auto 0;
+  padding: 0px 1rem 0;
+}
+
+.container > h1 {
+  text-align: center;
+}
+
+.container > p {
+  color: var(--color-slate-100);
+  text-align: center;
+}
+
+.container > p > a {
+  color: var(--color-slate-400);
+}
