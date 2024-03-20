@@ -1,0 +1,9 @@
+.container {
+  height: 3rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px dashed var(--color-slate-500);
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 8px;
+}

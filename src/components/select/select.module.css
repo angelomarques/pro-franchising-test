@@ -1,0 +1,48 @@
+.selectTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: none;
+  border: 1px solid var(--color-slate-500);
+  border-radius: 8px;
+  width: 100%;
+  color: var(--color-slate-100);
+  font-size: 1rem;
+  padding: 0rem 0.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+.selectTrigger:focus {
+  box-shadow: 0 0 0 2px black;
+}
+.selectTrigger[data-placeholder] {
+  opacity: 0.7;
+}
+
+.selectContent {
+  overflow: hidden;
+  background-color: var(--color-slate-100);
+  border-radius: 6px;
+  box-shadow:
+    0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.selectViewport {
+  padding: 5px;
+}
+
+.selectItem {
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--color-slate-900);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
+}

@@ -3,13 +3,13 @@
 import { ProductItem } from "@/components/product-item";
 import { getProducts } from "@/services/product";
 import { useQuery } from "@tanstack/react-query";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import styles from "./page.module.css";
 import { Button } from "@/components/button";
 import Link from "next/link";
 
-export default function Home() {
+export default function Pdv() {
   const { data: session, status } = useSession();
   const { data: products, isLoading } = useQuery({
     queryKey: ["products"],
@@ -26,18 +26,19 @@ export default function Home() {
         <h1>Lista de Produtos</h1>
 
         <div>
-          <Link href="/products/create">
-            <Button variant="outline">Criar Produto</Button>
+          <Link href="/cart">
+            <Button>Acessar Carrinho</Button>
           </Link>
-          <Link href="/pdv">
-            <Button>Acessar PDV</Button>
+          <Link href="/">
+            <Button variant="outline">Acessar Dashboard</Button>
           </Link>
-          <Button onClick={() => signOut()}>Sair da plataforma</Button>
         </div>
       </header>
       <main>
         {products?.length
-          ? products.map((item) => <ProductItem product={item} key={item.id} />)
+          ? products.map((item) => (
+              <ProductItem isSalePage product={item} key={item.id} />
+            ))
           : "Sem produtos"}
       </main>
     </div>
